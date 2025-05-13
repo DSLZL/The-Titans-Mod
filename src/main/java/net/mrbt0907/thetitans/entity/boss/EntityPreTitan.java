@@ -257,7 +257,9 @@ public abstract class EntityPreTitan extends EntityLiving implements IRangedAtta
                 this.hurtResistantTime = 40;
                 this.rotationPitch = 0;
                 if (ticksExisted > 10)
-                this.ticksExisted = 10;
+                {
+                    this.ticksExisted = 10;
+                }
                 lastTickPosX = prevPosX = posX;
                 lastTickPosY = prevPosY = posY;
                 lastTickPosZ = prevPosZ = posZ;
@@ -273,7 +275,9 @@ public abstract class EntityPreTitan extends EntityLiving implements IRangedAtta
                 if (j1 <= 0)
                 {
                 	if (!this.world.isRemote)
-                    this.world.newExplosion(this, this.posX, this.posY + (height * 0.5F), this.posZ, this.getSizeMultiplier() + 2, false, false);
+                    {
+                        this.world.newExplosion(this, this.posX, this.posY + (height * 0.5F), this.posZ, this.getSizeMultiplier() + 2, false, false);
+                    }
                     this.world.playBroadcastSound(1023, new BlockPos(this), 0);
                 }
 
