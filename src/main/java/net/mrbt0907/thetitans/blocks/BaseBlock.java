@@ -1,5 +1,6 @@
 package net.mrbt0907.thetitans.blocks;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -130,7 +131,7 @@ public class BaseBlock extends Block
 	@Override
 	public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune)
 	{
-		Random rand = world instanceof World ? ((World)world).rand : new Random();
+		Random rand = world instanceof World ? ((World)world).rand : new SecureRandom();
 		if (exp != null && this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this))
 			return MathHelper.getInt(rand, exp[0], exp[1]);
 		return 0;
